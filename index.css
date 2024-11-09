@@ -22,3 +22,6 @@ header nav span a:hover::after {
     width: 100%;
     transition: width 0.5s ease;
 }
+header nav span a:hover .active{
+    border-bottom:none;
+}
