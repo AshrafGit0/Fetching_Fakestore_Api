@@ -1,3 +1,9 @@
+function bodyload() {
+    LoadCategories();
+    LoadProducts("https://fakestoreapi.com/products");
+    GetCartCount();
+    activeLinks();
+}
 function LoadCategories() {
     fetch("https://fakestoreapi.com/products/categories")
         .then(function (response) {
@@ -45,11 +51,6 @@ function LoadProducts(URL) {
             });
         });
 }
-function bodyload() {
-    LoadCategories();
-    LoadProducts("https://fakestoreapi.com/products");
-    GetCartCount();
-}
 function CategoryChange() {
     var categoryName = document.getElementById("lstCategories").value;
     if (categoryName == "all") {
@@ -89,4 +90,17 @@ function ShowCartClick() {
         tr.appendChild(tdPrice);
         document.querySelector("tbody").appendChild(tr);
     })
+}
+
+// navbar active links
+
+function activeLinks() {
+    const links = document.querySelectorAll("header nav span a");
+    links.forEach((link) => {
+        link.addEventListener("click", (e) => {
+            document.querySelector(".active").classList.remove("active");
+            e.target.classList.add("active");
+        })
+    })
+    console.log(links);
 }

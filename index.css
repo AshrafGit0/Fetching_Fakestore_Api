@@ -1,7 +1,24 @@
 header nav span a {
     color: white;
+    padding: 7px;
+    position: relative;
 }
 
-header nav span a:hover {
-    color: blue;
+header nav span .active {
+    border-bottom: 1px solid white;
+}
+
+header nav span a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    border-bottom: 1px solid white;
+    width: 0;
+    transition: width 0.5s ease;
+}
+
+header nav span a:hover::after {
+    width: 100%;
+    transition: width 0.5s ease;
 }
