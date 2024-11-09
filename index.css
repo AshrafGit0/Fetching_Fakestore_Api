@@ -1,0 +1,7 @@
+header nav span a {
+    color: white;
+}
+
+header nav span a:hover {
+    color: blue;
+}
